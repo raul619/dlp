@@ -1,5 +1,5 @@
-FUENTE = ejemplo2
-PRUEBA = proba.txt
+FUENTE = basep1
+PRUEBA = textoprueba.txt
 
 all: compile
 
@@ -11,5 +11,5 @@ clean:
 	rm $(FUENTE) lex.yy.c 
 
 run:
-	./$(FUENTE) < $(PRUEBA)
+	./$(FUENTE) $(PRUEBA)
 
