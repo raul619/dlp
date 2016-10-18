@@ -1,18 +1,20 @@
 %{
 unsigned charCount = 0, minusCount = 0, lineCount = 0, fraseCount = 0, mayusCount = 0, palabras = 0, frases = 0;
 %}
-/*word [^ \t\n\46]+*/
+word [^ \t\n\"."]+
 minusculas [^ A-Z\t\n"."]+
 mayusculas [^ a-z\t\n"."]+
 frases "."
+char [^ \t\n]+
 eol \n
 %%
-{frases} {frases++;}/*
+char	{charCount++;}
+{frases} {frases++; charCount++;}/*
 {word}	{palabras++;}*/
 {minusculas}	{minusCount++; charCount += yyleng;}
 {mayusculas}	{mayusCount++; charCount += yyleng;}
-{eol}	{charCount++; lineCount++; }
-.	{charCount++;}
+{word}	{charCount += yyleng;}
+{eol}	{lineCount++; }
 %%
 int main(int argc, char *argv[])
 {
@@ -24,7 +26,8 @@ int main(int argc, char *argv[])
 			yyin = ptrFichero;
 			yylex();
 			fclose(ptrFichero);
-			printf("\n\tFrases: %d\n\tPalabras: %d\n\tMinusculas: %d\n\tMayusculas: %d\n\tLineas: %d\n\n", frases, palabras, minusCount, mayusCount, lineCount);
+			printf("\n\tCaracteres: %d\n\tFrases: %d\n\tPalabras: %d\n\tMinusculas: %d\n\tMayusculas: %d\n\tLineas: %d\n\n", 
+				charCount, frases, palabras, minusCount, mayusCount, lineCount);
 		} else{
 			printf("ERROR: No se ha podido abrir el fichero '%s'\n",argv[1]);
 		}
