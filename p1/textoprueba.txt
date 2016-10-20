@@ -1,5 +1,3 @@
-asdf asdfasd ASDASDSAD asfdasd.
-ljklkjl asdf sdadsf,
-asdfasdfasdfasdfdsafasdfasdfads.
-asd kjljñ 123 ASDASD
-JKLÑJLKÑ.
+ESTO es un texto de prueba con palabras en MAYUSCULA y palabras en minuscula.
+EN esta linea hay dos frases. SI que las hay.
+EN el texto hay 6 palabras en MAYUSCULA y 28 en minuscula.
