@@ -1,4 +1,4 @@
-FUENTE = asignatura
+FUENTE = asignaturap2
 PRUEBA = textoprueba.txt
 
 all: compile
