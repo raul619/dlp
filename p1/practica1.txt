@@ -1,0 +1,30 @@
+Autor: Raúl Santoveña Gömez
+
+Para el desarrollo de esta práctica se han seguido los siguiente criterios:
+
+	- Se cuentan como caracteres todo excepto espacios en blanco, 
+	tabuladores y saltos de linea.
+
+	- Cada vez que se encuentra un punto se toma como una frase nueva. Si 
+	se encuentren varios puntos seguidos, se toma como si fuera una única 
+	frase. De esta manera, evitamos que al poner puntos suspensivos por 
+	ejemplo se cuenten 3 frases de golpe. En este caso, se ha decidido no 
+	contar como frases aquellas que finalizen por signos de interrogación o 
+	de exclamación, ya que el enunciado define las frases como secuencias 
+	de palabras finalizadas por ".", pero podría haberse hecho de manera
+	sencilla.
+
+	- Como dice el enunciado, solo se cuentan como palabras minusculas 
+	aquellas que todas sus letras estan en minusculas y lo mismo para las
+	mayusculas. El resto de palabras, contengas números, símbolos, o mezcla
+	de minúsculas o mayúsculas solo cuentan como palabras.
+
+	- El programa muestra por pantalla el conteo de palabras minúsculas, 
+	mayúsculas, palabras en total, frases y caracteres.
+
+Para la ejecucion de la práctica se incluye un Makefile para su compilacion y 
+ejecucion similar al proporcionado en los ejemplos.
+	- Para compilar: 'make compile'
+	- Para ejecutar: 'make run' ó 'make run2' (Esto permite ejecutar los 
+	distintos textos de ejemplo)
+	- Para eliminar archivos generados: 'make clean'
