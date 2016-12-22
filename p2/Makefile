@@ -1,15 +1,15 @@
-FUENTE = asignaturap2
-PRUEBA = textoprueba.txt
+FUENTE = practica2
+PRUEBA = practica2_prueba1.txt
 
-all: compile
+all: compile run
 
 compile:
 	flex $(FUENTE).l
-	gcc -o $(FUENTE) lex.yy.c -lfl
-
-clean:
-	rm $(FUENTE) lex.yy.c 
+	bison -o $(FUENTE).tab.c $(FUENTE).y -yd
+	gcc -o $(FUENTE) lex.yy.c $(FUENTE).tab.c -lfl -ly
 
 run:
-	./$(FUENTE) $(PRUEBA)
+	./$(FUENTE) < $(PRUEBA)
 
+clean:
+	rm $(FUENTE) lex.yy.c $(FUENTE).tab.c $(FUENTE).tab.h
