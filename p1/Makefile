@@ -1,5 +1,6 @@
-FUENTE = basep1
-PRUEBA = textoprueba.txt
+FUENTE = practica1
+PRUEBA = practica1_prueba1.txt
+PRUEBA2 = practica1_prueba2.txt
 
 all: compile
 
@@ -12,4 +13,7 @@ clean:
 
 run:
 	./$(FUENTE) $(PRUEBA)
+
+run2:
+	./$(FUENTE) $(PRUEBA2)
 
