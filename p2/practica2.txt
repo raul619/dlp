@@ -1,0 +1,30 @@
+Autor: Raúl Santoveña Gömez
+
+Para el desarrollo de esta práctica se han seguido los siguiente criterios:
+
+	- La mayoría de los errores son tratados en el lexico, donde se contemplan los siguientes errores:
+
+		- Formato erroneo de DNI, tiene que tener 9 números seguidos de
+		un guión y una letra.
+
+		- Nombres mal formados según el formato dado.
+
+		- Formato erroneo de las notas. En este caso, solo se detectan 
+		errores referidos a la parte decimal, por ejemplo, si la nota 
+		tiene más de 2 decimales. Se ha permitido que se ponga un 
+		número sin decimales, pero si la nota tiene parte decimal, debe 
+		tener entre 1 y 2 números solamente. En el caso de que la nota 
+		esté bien formada, la comprobación de que sea 10 o menor se 
+		hace en la parte sintactica, con una simple comprobación. 
+
+	- En la parte sintactica, se crea las listas de manera estática con un 
+	tamaño predefinido por simplicidad, donde se van almacenando ya sean 
+	los distintos errores, los alumnos aprobado o los suspensos para 
+	mostrarlos al finalizar el análisis.
+
+Para la ejecucion de la práctica se incluye un Makefile para su compilacion y 
+ejecucion similar al proporcionado en los ejemplos.
+	- Para compilar: 'make compile'
+	- Para ejecutar: 'make run', 'make run2', 'make run3' (Esto permite ejecutar los 
+	distintos textos de ejemplo)
+	- Para eliminar archivos generados: 'make clean'

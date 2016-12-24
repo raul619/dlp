@@ -1,6 +1,6 @@
 Procesamiento de Lenguajes - Curso 2016/2017
 Identificador	Alumno	Nota
 11223344-Z	Alonso Barreiro, Ana	5.68
-AAAAAAAA-B	Alonso Barros, Antonio	4.8
+55555555-B	Alonso Barros, Antonio	4.8
 12345678-X	Alonso Calvo, Andres	2.8
-13345678-X	Barreiro Calvo, Luis	35.68
+13345678-X	Barreiro Calvo, Luis	5.68

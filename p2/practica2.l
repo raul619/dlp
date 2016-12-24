@@ -7,7 +7,7 @@ curso	[0-9]{4}"/"[0-9]{4}
 ccurso " "Curso" "
 cabecera Identificador\tAlumno\tNota
 nif 	[0-9]{8}"-"[A-Z]
-nota 	[0-9]+"."[0-9]{1,2}\n
+nota 	[0-9]+("."[0-9]{1,2})?
 alumno 	[A-Z][a-z]+" "[A-Z][a-z]+", "[A-Z][a-z]+
 %%
 {asignatura}	{yylval.valString = strdup(yytext); return ASIGNATURA;}
@@ -18,6 +18,6 @@ alumno 	[A-Z][a-z]+" "[A-Z][a-z]+", "[A-Z][a-z]+
 {alumno}	{yylval.valString = strdup(yytext); return ALUMNO;}
 {nota}		{yylval.valFloat = atof(yytext); return NOTA;}
 \t 		{return '\t';}
-\n
-.		{return '.';}
+\n		{return '\n';}
+.		{return '@';}
 %%

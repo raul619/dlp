@@ -33,7 +33,7 @@ int yylex();
 S : titulo CABECERA lista {free($2);} 
     | titulo CABECERA {free($2);}
 	;
-titulo : ASIGNATURA CCURSO CURSO {
+titulo : ASIGNATURA CCURSO CURSO '\n'{
 		printf("- Asignatura: %s\n- Curso: %s\n", $1, $3); num_linea+=2;
 		free($1);
 		free($3);
@@ -42,7 +42,7 @@ titulo : ASIGNATURA CCURSO CURSO {
 lista : lista linea {}
 	| linea {}
 	;
-linea : NIF'\t'ALUMNO'\t'NOTA {
+linea : NIF'\t'ALUMNO'\t'NOTA '\n'{
 		num_linea++;
 		if ($5 > 10) {
 			free($1);
@@ -63,7 +63,7 @@ linea : NIF'\t'ALUMNO'\t'NOTA {
 			numAprobados++;
 		}
 	}
-	| error'\t'ALUMNO'\t'NOTA {
+	| error'\t'ALUMNO'\t'NOTA '\n'{
 		free($3);
 		num_linea++; 
 		yyerror("NIF incorrecto");
@@ -71,7 +71,7 @@ linea : NIF'\t'ALUMNO'\t'NOTA {
 		
 
 	}
-	| NIF'\t'error'\t'NOTA {
+	| NIF'\t'error'\t'NOTA '\n' {
 		free($1); 
 		num_linea++;
 		yyerror("Alumno incorrecto");
@@ -79,14 +79,14 @@ linea : NIF'\t'ALUMNO'\t'NOTA {
 		
 
 	}
-	| NIF'\t'ALUMNO'\t'error { 
+	| NIF'\t'ALUMNO'\t'error '\n' { 
 		free($1);
 		free($3);
 		num_linea++;
 		yyerror("Nota incorrecta");
 		yyclearin;
 	}
-	| error {
+	| error '\n'{
 		yyclearin;
 	}
 
